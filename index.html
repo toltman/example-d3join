@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joins in D3</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script>
+    var data = ["Item 1", "Item 2", "Item 3"];
+    var container = d3.select("#container");
+    var join = container.selectAll("ul").data(data);
+    join
+      .enter()
+      .append("li")
+      .text((d) => d);
+  </script>
+</html>
